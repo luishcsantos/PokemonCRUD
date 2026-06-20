@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PokemonCRUD.Models;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace PokemonCRUD.Data
 {
@@ -106,9 +107,18 @@ namespace PokemonCRUD.Data
 
         #endregion
 
-        #region Excluir
+        #region Deletar
 
-
+        public void Deletar(int id)
+        {
+            using(var conn = ConexaoDB.ObterConexao())
+            {
+                conn.Open();
+                var cmd = new MySqlCommand("DELETE FROM pokemons WHERE id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         #endregion
     }
