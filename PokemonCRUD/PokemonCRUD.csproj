@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DBA4F776-0F5B-4583-8C99-A41B58F4701A}</ProjectGuid>
+    <ProjectGuid>{9CC9C4CE-03F4-4E91-AC49-D542C8CBE9ED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PokemonCRUD</RootNamespace>
     <AssemblyName>PokemonCRUD</AssemblyName>
@@ -136,6 +136,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
