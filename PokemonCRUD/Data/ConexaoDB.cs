@@ -13,7 +13,7 @@ namespace PokemonCRUD.Data
     public class ConexaoDB
     {
         private static string connectionString =
-            "Server=localhost;Database=pokemondb;Uid=root;Pwd=123456;";
+            "Server=localhost;port=3316;Database=pokemondb;Uid=root;Pwd=123456;";
 
         public static MySqlConnection ObterConexao()
         {
