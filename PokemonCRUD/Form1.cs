@@ -115,7 +115,7 @@ namespace PokemonCRUD
 
         private void btnVerSalvos_Click(object sender, EventArgs e)
         {
-
+            new FormLista().ShowDialog();
         }
 
         private void lblStats_Click(object sender, EventArgs e)
