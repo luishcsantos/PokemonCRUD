@@ -40,8 +40,8 @@ namespace PokemonCRUD.Services
             var pokemon = new Pokemon
             {
                 Nome = obj["name"].ToString(),
-                Altura = (decimal)obj["height"],
-                Peso = (decimal)obj["weight"],
+                Altura = (decimal)obj["height"] / 10,
+                Peso = (decimal)obj["weight"] / 10,
                 ImagemUrl = obj["sprites"]["front_default"].ToString(),
             };
 

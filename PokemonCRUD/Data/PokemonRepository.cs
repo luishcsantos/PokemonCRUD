@@ -46,11 +46,12 @@ namespace PokemonCRUD.Data
 
         #region LISTAR
         //método q retorna uma lista de pokemon
-        public List<Pokemon> ListarTodos() 
+        public List<Pokemon> ListarTodos()
         {
             var lista = new List<Pokemon>(); //cria uma lista vazia
-            using(var conn = ConexaoDB.ObterConexao())
+            using (var conn = ConexaoDB.ObterConexao())
             {
+                conn.Open(); //abre a conexão com o banco
                 var cmd = new MySqlCommand("SELECT * FROM pokemons", conn);
                 //percorre os resultados linha por linha
                 var reader = cmd.ExecuteReader();
@@ -72,7 +73,7 @@ namespace PokemonCRUD.Data
                         ImagemUrl = reader.GetString("imagem_url"),
                     });
                 }
-                
+
             }
             return lista; //devolve a lista preenchida
         }
@@ -85,12 +86,13 @@ namespace PokemonCRUD.Data
             {
                 conn.Open();
                 string sql = @"UPDATE pokemons SET
-                        tipo1=@tipo1, tipo2=@tipo2, altura=@altura
+                        tipo1=@tipo1, tipo2=@tipo2, altura=@altura,
                         peso=@peso, hp=@hp, ataque=@ataque, 
                         defesa=@defesa, velocidade=@velocidade
                         WHERE id=@id";
 
                 var cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", p.Id);
                 cmd.Parameters.AddWithValue("@tipo1", p.Tipo1);
                 cmd.Parameters.AddWithValue("@tipo2", p.Tipo2 ?? "");
                 cmd.Parameters.AddWithValue("@altura", p.Altura);
@@ -109,7 +111,7 @@ namespace PokemonCRUD.Data
         #region DELETAR
         public void Deletar(int id)
         {
-            using(var conn = ConexaoDB.ObterConexao())
+            using (var conn = ConexaoDB.ObterConexao())
             {
                 conn.Open();
                 var cmd = new MySqlCommand(
@@ -120,21 +122,20 @@ namespace PokemonCRUD.Data
         }
         #endregion
 
-        #region EXISTE
-
+        #region Existe
         public bool Existe(string nome)
         {
-            using(var conn = ConexaoDB.ObterConexao())
+            using (var conn = ConexaoDB.ObterConexao())
             {
                 conn.Open();
-                var cmd = new MySqlCommand("SELECT COUNT(*) FROM pokemons WHERE nome=@nome", conn);
+                var cmd = new MySqlCommand(
+                    "SELECT COUNT(*) FROM pokemons WHERE nome=@nome", conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
+
         }
-
         #endregion
-
     }
 }

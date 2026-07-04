@@ -72,9 +72,9 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Location = new System.Drawing.Point(509, 40);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 3;
-            this.lblNome.Text = "label1";
+            this.lblNome.Text = "Nome:";
             this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
             // 
             // lblTipos
@@ -82,9 +82,9 @@
             this.lblTipos.AutoSize = true;
             this.lblTipos.Location = new System.Drawing.Point(509, 64);
             this.lblTipos.Name = "lblTipos";
-            this.lblTipos.Size = new System.Drawing.Size(35, 13);
+            this.lblTipos.Size = new System.Drawing.Size(42, 13);
             this.lblTipos.TabIndex = 4;
-            this.lblTipos.Text = "label1";
+            this.lblTipos.Text = "Tipo(s):";
             this.lblTipos.Click += new System.EventHandler(this.lblTipos_Click);
             // 
             // lblAltura
@@ -92,9 +92,9 @@
             this.lblAltura.AutoSize = true;
             this.lblAltura.Location = new System.Drawing.Point(509, 88);
             this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(35, 13);
+            this.lblAltura.Size = new System.Drawing.Size(37, 13);
             this.lblAltura.TabIndex = 5;
-            this.lblAltura.Text = "label1";
+            this.lblAltura.Text = "Altura:";
             this.lblAltura.Click += new System.EventHandler(this.lblAltura_Click);
             // 
             // lblPeso
@@ -102,9 +102,9 @@
             this.lblPeso.AutoSize = true;
             this.lblPeso.Location = new System.Drawing.Point(509, 111);
             this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(35, 13);
+            this.lblPeso.Size = new System.Drawing.Size(34, 13);
             this.lblPeso.TabIndex = 6;
-            this.lblPeso.Text = "label1";
+            this.lblPeso.Text = "Peso:";
             this.lblPeso.Click += new System.EventHandler(this.lblPeso_Click);
             // 
             // lblStats
@@ -112,9 +112,9 @@
             this.lblStats.AutoSize = true;
             this.lblStats.Location = new System.Drawing.Point(509, 134);
             this.lblStats.Name = "lblStats";
-            this.lblStats.Size = new System.Drawing.Size(35, 13);
+            this.lblStats.Size = new System.Drawing.Size(105, 13);
             this.lblStats.TabIndex = 7;
-            this.lblStats.Text = "label1";
+            this.lblStats.Text = "HP: ATK: DEF: VEL:";
             this.lblStats.Click += new System.EventHandler(this.lblStats_Click);
             // 
             // btnSalvar
